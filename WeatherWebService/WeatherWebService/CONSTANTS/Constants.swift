@@ -31,4 +31,14 @@ class Constants {
         static let tempMin = "temp_min"
         static let tempMax = "temp_max"
     }
+    struct RegularExpression {
+        static let alphabeticRegularExpression = "^[a-zA-Z]+$"
+    }
+    struct LabelConstants {
+        static let titleLatitude = "Latitude: "
+        static let titleLongitude = "Longitude: "
+        static let titleMaxTemp = "MaxTemperature: "
+        static let titleMinTemp = "MinTemperature: "
+        
+    }
 }

@@ -37,9 +37,10 @@ class CityDetailsViewController: UIViewController {
     }
     
     //MARK:IsWhitespace
-    /** Checks whether the input is empty or not
-     * param name: input string to be checked
-     * returns false if empty string else returns true
+    /** 
+     Checks whether the input is empty or not
+     @param name: input string to be checked
+     @return false if empty string else returns true
      */
     func isWhitespace(name: String) -> Bool{
         let trimmedName:String = name.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet())
@@ -50,18 +51,20 @@ class CityDetailsViewController: UIViewController {
     }
     
     //MARK:IsAlphabetic
-    /** Checks whether the input is alphabetic only
-     * param name: input string to be checked
-     * returns true if string has alphabets else returns false
+    /** 
+     Checks whether the input is alphabetic only
+     @param name: input string to be checked
+     @returns true if string has alphabets else returns false
      */
     func isAlphabetic(name: String) -> Bool {
-        return name.rangeOfString("^[a-zA-Z]+$", options: .RegularExpressionSearch) != nil
+        return name.rangeOfString(Constants.RegularExpression.alphabeticRegularExpression, options: .RegularExpressionSearch) != nil
     }
     
     //MARK:ShowAlertView
-    /** Shows alertview
-     * param alertTitle: title on alert
-     * param alertMessage: message on alertview
+    /** 
+     Shows alertview
+     @param alertTitle: title on alert
+     @param alertMessage: message on alertview
      */
     func showAlertView(alertTitle: String,alertMessage: String) {
         let alertController = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .Alert)
@@ -73,7 +76,8 @@ class CityDetailsViewController: UIViewController {
     }
     
     //MARK:PushViewController
-    /** Navigates to next screen
+    /** 
+     Navigates to next screen
      */
     func pushViewController(){
         let weatherDetailsViewController: WeatherDetailsViewController = (self.storyboard?.instantiateViewControllerWithIdentifier(Constants.StoryBoardID.weatherDetailsViewController)

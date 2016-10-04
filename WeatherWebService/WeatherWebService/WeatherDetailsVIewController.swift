@@ -31,8 +31,9 @@ class WeatherDetailsViewController: UIViewController {
     }
     
     //MARK:CallWeatherApi
-    /** Calls Api and fetches data
-    * param cityname: The input city whose data is to be fetched
+    /** 
+     Calls Api and fetches data
+     @param cityname: The input city whose data is to be fetched
     */
     func callWeatherApi(cityName:String) {
         let url = Constants.ApiDetails.url
@@ -63,8 +64,9 @@ class WeatherDetailsViewController: UIViewController {
     }
 
     //MARK:ParseWeather
-    /** Parses ns dictionary and fetches the required data
-     * param jsonDictionary: The dictionary to be parsed
+    /** 
+     Parses ns dictionary and fetches the required data
+     @param jsonDictionary: The dictionary to be parsed
      */
     func parseWeather(jsonDictionary:NSDictionary) {
         guard let latitude = jsonDictionary[Constants.ObjectNames.coord]?[Constants.AttributesNames.lat] as? Float else{
@@ -83,20 +85,22 @@ class WeatherDetailsViewController: UIViewController {
     }
     
     //MARK:ConvertFahrenheitToCelsius
-    /** Converts temperature from fahrenheit to celsius
-     *param temperatureInFahrenheit: temperature value in Fahrenheit
-     *returns temperature value in Celsius
+    /** 
+     Converts temperature from fahrenheit to celsius
+     @param temperatureInFahrenheit: temperature value in Fahrenheit
+     @returns temperature value in Celsius
      */
     func convertFahrenheitToCelsius(temperatureInFahrenheit:Float)->Float{
         return ((temperatureInFahrenheit-32)/1.8)
     }
     
     //MARK:SetWeatherValues
-    /** Sets attributes of weather object
-     * param latitude: latitude value
-     * param longitude: longitude value
-     * param tempMax: tempMax value
-     * param tempMin: tempMin value
+    /** 
+     Sets attributes of weather object
+     @param latitude: latitude value
+     @param longitude: longitude value
+     @param tempMax: tempMax value
+     @param tempMin: tempMin value
      */
     func setWeatherValues(latitude:Float,longitude:Float,tempMax:Float,tempMin:Float){
         self.weather!.latitude = latitude
@@ -106,14 +110,15 @@ class WeatherDetailsViewController: UIViewController {
     }
     
     //MARK:ShowUI
-    /** Sets label value
+    /** 
+     Sets label value
      */
     func showUI() {
         dispatch_async(dispatch_get_main_queue()) {
-            self.labelLatitude.text = String("Latitude: \((self.weather?.latitude)!)")
-            self.labelLongitude.text = String("Longitude: \((self.weather?.longitude)!)")
-            self.labelMaxTemperature.text = String("MaxTemperature: \((self.weather!.tempMax)!)")
-            self.labelMinTemperature.text = String("MinTemperature: \((self.weather!.tempMin)!)")
+            self.labelLatitude.text = String("\(Constants.LabelConstants.titleLatitude) \((self.weather?.latitude)!)")
+            self.labelLongitude.text = String("\(Constants.LabelConstants.titleLongitude) \((self.weather?.longitude)!)")
+            self.labelMaxTemperature.text = String("\(Constants.LabelConstants.titleMaxTemp) \((self.weather!.tempMax)!)")
+            self.labelMinTemperature.text = String("\(Constants.LabelConstants.titleMinTemp) \((self.weather!.tempMin)!)")
         }
     }
     

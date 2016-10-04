@@ -88,13 +88,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hG1-gp-vbb">
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hG1-gp-vbb">
                                 <rect key="frame" x="92" y="210" width="137" height="45"/>
                                 <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="0.97722739359999999" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="9q6-Zl-f3s"/>
-                                    <constraint firstAttribute="width" constant="137" id="cLi-5A-sEf"/>
-                                </constraints>
                                 <state key="normal" title="Check Weather">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -102,24 +98,14 @@
                                     <action selector="buttonCheckWeatherTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zha-C4-lj7"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jJC-33-LnY">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jJC-33-LnY">
                                 <rect key="frame" x="62" y="116" width="197" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="197" id="YGr-2N-Zhp"/>
-                                    <constraint firstAttribute="height" constant="30" id="mIA-vC-ATI"/>
-                                </constraints>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="0.97722739359999999" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="jJC-33-LnY" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="52" id="0Io-yM-7pe"/>
-                            <constraint firstItem="jJC-33-LnY" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2LU-Bu-LAb"/>
-                            <constraint firstItem="hG1-gp-vbb" firstAttribute="top" secondItem="jJC-33-LnY" secondAttribute="bottom" constant="64" id="PT3-EP-pKp"/>
-                            <constraint firstItem="hG1-gp-vbb" firstAttribute="centerX" secondItem="jJC-33-LnY" secondAttribute="centerX" id="Z9Z-Nu-uI5"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="cKR-fE-vmS"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
